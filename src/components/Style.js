@@ -13,12 +13,13 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const Header = styled.header`
-    height: 8vw;
+    height: 6vw;
     width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     color: #E71B27;
+    border:1px solid plum;
 `
 
 export const TitleBox = styled.div`
@@ -82,16 +83,27 @@ export const Main = styled.main`
 
 export const Cap = styled.div`
     display:flex;
-    padding: 1vw 3vw;
+    height:17.5vw;
+    align-items:center;
+    width:70vw;
     border: 1px solid blue;
+    margin:4vw 2vw;
+`
+
+export const Info = styled.div`
+    border: 2px solid green;
+    margin: 0vw 1vw;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
 
     div{
-        border: 2px solid green;
-        margin:1vw;
-        padding:2vw;
         display:flex;
-        flex-direction:column;
-        justify-content: space-evenly;
+        border:1px solid yellow;
+        padding:0.2vw;
+        width:5vw;
+        justify-content: space-around;
     }
 `
 
@@ -99,8 +111,17 @@ export const Image = styled.img`
     width:30vw;
 `
 
+export const Heart = styled.img`
+    width: 1.2vw;
+`
+
 export const Movie = styled.div`
-    width: 20vw;
+    width: 22vw;
+    height:25vw;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border:1px solid pink;
 `
 
 export const Img = styled.img`
