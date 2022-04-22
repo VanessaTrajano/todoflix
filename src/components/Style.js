@@ -21,7 +21,6 @@ export const Header = styled.header`
     color: #E71B27;
 `
 
-
 export const TitleBox = styled.div`
     display:flex;
     width:45%;
@@ -79,4 +78,31 @@ export const Input = styled.input`
 
 export const Main = styled.main`
     color:#fff;
+`
+
+export const Cap = styled.div`
+    display:flex;
+    padding: 1vw 3vw;
+    border: 1px solid blue;
+
+    div{
+        border: 2px solid green;
+        margin:1vw;
+        padding:2vw;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-evenly;
+    }
+`
+
+export const Image = styled.img`
+    width:30vw;
+`
+
+export const Movie = styled.div`
+    width: 20vw;
+`
+
+export const Img = styled.img`
+    width:100%;
 `
