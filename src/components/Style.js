@@ -18,7 +18,6 @@ export const Header = styled.header`
     display:flex;
     justify-content:space-between;
     align-items:center;
-    color: #E71B27;
     border:1px solid plum;
 `
 
@@ -26,6 +25,7 @@ export const TitleBox = styled.div`
     display:flex;
     width:45%;
     justify-content:space-evenly;
+    color: #E71B27;
     nav{
         width:40%;
     }
@@ -36,6 +36,10 @@ export const Navigation = styled.ul`
     width:100%;
     justify-content:space-around;
     color: #fff;
+
+    img{
+        margin-left: -3.3vw;
+    }
 `
 
 export const Select = styled.select`
@@ -65,6 +69,29 @@ export const Button = styled.button`
     }
 `
 
+export const Item = styled.li`
+    &:hover{
+        border-bottom: 0.2vw solid white;
+    }
+`
+
+export const Categorias = styled.ul`
+    margin: 2vw 0 0 6vw;
+    list-style: none;
+    background-color: black;
+    width: 9vw;
+    height: 12vw;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+`
+
+export const Seta = styled.img`
+    width: 2vw;
+`
+
 export const Input = styled.input`
     background-color: #2C2C2C;
     border: none;
@@ -75,6 +102,7 @@ export const Input = styled.input`
     background-size:2vw 2vw;
     background-position: 0.5vw;
     border-radius:2px;
+    color: #fff;
 `
 
 export const Main = styled.main`
@@ -122,6 +150,7 @@ export const Movie = styled.div`
     flex-direction:column;
     align-items:center;
     border:1px solid pink;
+    color:white;
 `
 
 export const Img = styled.img`
