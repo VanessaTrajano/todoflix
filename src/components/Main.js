@@ -76,6 +76,7 @@ export default class Main extends React.Component {
                         </div>
                     </S.Info>
                 </S.Cap>
+                <h2>Destaques</h2>
                 <Carousel itemsToShow={4} enableAutoPlay={false}>
                     {this.state.catalogo.map((item) => (
                         <S.Movie>

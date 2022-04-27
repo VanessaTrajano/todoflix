@@ -18,7 +18,6 @@ export const Header = styled.header`
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border:1px solid plum;
 `
 
 export const TitleBox = styled.div`
@@ -114,21 +113,19 @@ export const Cap = styled.div`
     height:17.5vw;
     align-items:center;
     width:70vw;
-    border: 1px solid blue;
     margin:4vw 2vw;
 `
 
 export const Info = styled.div`
-    border: 2px solid green;
     margin: 0vw 1vw;
     height:100%;
     display:flex;
     flex-direction:column;
     justify-content: space-evenly;
+    text-align:justify;
 
     div{
         display:flex;
-        border:1px solid yellow;
         padding:0.2vw;
         width:5vw;
         justify-content: space-around;
@@ -151,6 +148,15 @@ export const Movie = styled.div`
     align-items:center;
     border:1px solid pink;
     color:white;
+    
+    h2{
+        text-align: center;
+    }
+
+    p{
+        text-align: justify;
+        margin: 0 1vw;
+    }
 `
 
 export const Img = styled.img`

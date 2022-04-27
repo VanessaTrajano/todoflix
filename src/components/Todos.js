@@ -1,8 +1,6 @@
 import React from 'react'
 import * as S from './Style'
 
-import Perfil from '../images/perfilRoxo.png'
-import Seta from '../images/setinha.png'
 import Shrek from '../images/shrek.png'
 import CapFantastico from '../images/capitao-fantastico.png'
 import QueHrElaVolta from '../images/que-horas-ela-volta.png'
@@ -13,12 +11,15 @@ import Rocketman from '../images/rocketman.jpeg'
 import AmarElo from '../images/amarElo.jpeg'
 import FugaGalinhas from '../images/fugaDasGalinhas.jpeg'
 
-export default class Header extends React.Component {
+export default class Todos extends React.Component {
 
     state = {
-        list: false,
-        busca: [],
         catalogo: [
+            {
+                titulo: 'Capitão Fantástico',
+                poster: CapFantastico,
+                sinopse: 'Nas florestas do estado de Washington, um pai cria seus seis filhos longe da civilização, em uma rígida rotina de aventuras. Ele é forçado a deixar o isolamento e leva sua família para encarar o mundo, desafiando sua ideia do que significa ser pai.',
+            },
             {
                 titulo: 'Shrek',
                 poster: Shrek,
@@ -62,69 +63,19 @@ export default class Header extends React.Component {
         ],
     }
 
-    handleList = () => {
-        this.setState({
-            list: !this.state.list,
-        })
-    }
-
-    handleChange = (e) => {
-        if(e.target.value !== ''){
-            this.setState({
-                busca: this.state.catalogo.filter((item) => {
-                    if (item.titulo.toLowerCase().includes(e.target.value.toLowerCase())) {
-                        return true;
-                    }
-                })
-            })
-        } else {
-            this.setState({
-                busca: [],
-            })
-        }
-    }
-
     render() {
         return (
             <div>
-                <S.Header>
-                    <S.GlobalStyle />
-                    <S.TitleBox>
-                        <h1>TODOFLIX</h1>
-                        <nav>
-                            <S.Navigation>
-                                <S.Item>Início</S.Item>
-                                <S.Item onClick={this.handleList}>Categorias</S.Item>
-                                <S.Seta src={Seta} onClick={this.handleList} />
-                                {this.state.list && (
-                                    <S.Categorias>
-                                        <li>Todos</li>
-                                        <li>Favoritos</li>
-                                        <li>Já vistos</li>
-                                        <li>Adicionados</li>
-                                    </S.Categorias>
-                                )}
-                            </S.Navigation>
-                        </nav>
-                    </S.TitleBox>
-
-                    <S.SearchBox>
-                        <S.Button>Adicionar filme</S.Button>
-                        <S.Input placeholder='Pesquisar' onChange={this.handleChange} />
-                        <div>
-                            <img src={Perfil} />
-                            <S.Seta src={Seta} />
-                        </div>
-                    </S.SearchBox>
-
-                </S.Header>
-                {this.state.busca.map((item) => (
+                <S.Main>
+                    <h2>Todos</h2>
+                    {this.state.busca.map((item) => (
                         <S.Movie>
                             <S.Img src={item.poster} />
                             <h2>{item.titulo}</h2>
                             <p>{item.sinopse}</p>
                         </S.Movie>
                     ))}
+                </S.Main>
             </div>
         )
     }
