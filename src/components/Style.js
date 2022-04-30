@@ -108,6 +108,11 @@ export const Main = styled.main`
     color:#fff;
 `
 
+export const Destaque = styled.h2`
+    margin-left: 4vw;
+    margin-bottom: 2vw;
+`
+
 export const Cap = styled.div`
     display:flex;
     height:17.5vw;
@@ -161,4 +166,37 @@ export const Movie = styled.div`
 
 export const Img = styled.img`
     width:100%;
+`
+
+export const All = styled.div`
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+`
+
+export const todosFilmes = styled.div`
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    margin-bottom: 2vw;
+`
+
+export const Filme = styled.div`
+    width: 25vw;
+    height: 30vw;
+    border: 0.25vw double red;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2vw;
+    
+    img{
+        width:90%;
+    }
+
+    p{
+        width:90%;
+    }
 `

@@ -65,18 +65,18 @@ export default class Todos extends React.Component {
 
     render() {
         return (
-            <div>
-                <S.Main>
-                    <h2>Todos</h2>
-                    {this.state.busca.map((item) => (
-                        <S.Movie>
+            <S.All>
+                <h2>Todos</h2>
+                <S.todosFilmes>
+                    {this.state.catalogo.map((item) => (
+                        <S.Filme>
                             <S.Img src={item.poster} />
                             <h2>{item.titulo}</h2>
                             <p>{item.sinopse}</p>
-                        </S.Movie>
+                        </S.Filme>
                     ))}
-                </S.Main>
-            </div>
+                </S.todosFilmes>
+            </S.All>
         )
     }
 }

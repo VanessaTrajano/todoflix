@@ -76,8 +76,8 @@ export default class Main extends React.Component {
                         </div>
                     </S.Info>
                 </S.Cap>
-                <h2>Destaques</h2>
-                <Carousel itemsToShow={4} enableAutoPlay={false}>
+                <S.Destaque>Destaques</S.Destaque>
+                <Carousel itemsToShow={4} enableAutoPlay={true}>
                     {this.state.catalogo.map((item) => (
                         <S.Movie>
                             <S.Img src={item.poster} />

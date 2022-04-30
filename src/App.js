@@ -2,12 +2,7 @@ import React from 'react'
 import Main from './components/Main'
 import Todos from './components/Todos'
 import * as S from './components/Style'
-import {
-  BrowserRouter as Router,
-  Link,
-  Routes,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 
 import Perfil from './images/perfilRoxo.png'
 import Seta from './images/setinha.png'
@@ -93,33 +88,30 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <div>
+      <Router>
         <S.Header>
           <S.GlobalStyle />
           <S.TitleBox>
             <h1>TODOFLIX</h1>
-            <Router>
-              <nav>
-                <S.Navigation>
-                  <S.Item><Link to='/'>Início</Link></S.Item>
-                  <S.Item onClick={this.handleList}>Categorias</S.Item>
-                  <S.Seta src={Seta} onClick={this.handleList} />
-                  {this.state.list && (
-                    <S.Categorias>
-                      <li><Link to='todos'>Todos</Link></li>
-                      <li>Favoritos</li>
-                      <li>Já vistos</li>
-                      <li>Adicionados</li>
-                    </S.Categorias>
-                  )}
-                </S.Navigation>
-              </nav>
 
-              <Routes>
-                <Route path='/' element={<Main/>} />
-                <Route path='todos' element={<Todos/>} />
-              </Routes>
-            </Router>
+            <nav>
+              <S.Navigation>
+                <S.Item><Link to='/'>Início</Link></S.Item>
+                <S.Item onClick={this.handleList}>Categorias</S.Item>
+                <S.Seta src={Seta} onClick={this.handleList} />
+                {this.state.list && (
+                  <S.Categorias>
+                    <li><Link to='todos'>Todos</Link></li>
+                    <li>Favoritos</li>
+                    <li>Já vistos</li>
+                    <li>Adicionados</li>
+                  </S.Categorias>
+                )}
+              </S.Navigation>
+            </nav>
+
+
+
           </S.TitleBox>
 
           <S.SearchBox>
@@ -140,8 +132,12 @@ export default class Header extends React.Component {
           </S.Movie>
         ))}
 
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='todos' element={<Todos />} />
+        </Routes>
 
-      </div>
+      </Router>
     )
   }
 }
