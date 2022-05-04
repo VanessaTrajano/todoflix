@@ -61,22 +61,49 @@ export default class Todos extends React.Component {
                 sinopse: 'Nos bastidores do show no Theatro Municipal de São Paulo, o rapper e ativista Emicida celebra o grande legado da cultura negra brasileira.',
             },
         ],
+        busca: [],
     }
+
+    componentDidMount(){
+        this.setState({
+            busca: this.state.catalogo,
+        })
+    }
+
+    handleChange = (e) => {
+        if (e.target.value !== '') {
+          this.setState({
+            busca: this.state.catalogo.filter((item) => {
+              if (item.titulo.toLowerCase().includes(e.target.value.toLowerCase())) {
+                return true;
+              }
+            })
+          })
+        } else {
+          this.setState({
+            busca: this.state.catalogo,
+          })
+        }
+      }
+
 
     render() {
         return (
-            <S.All>
-                <h2>Todos</h2>
-                <S.todosFilmes>
-                    {this.state.catalogo.map((item) => (
-                        <S.Filme>
-                            <S.Img src={item.poster} />
-                            <h2>{item.titulo}</h2>
-                            <p>{item.sinopse}</p>
-                        </S.Filme>
-                    ))}
-                </S.todosFilmes>
-            </S.All>
+            <div>
+                <S.InputTodos placeholder='Pesquisar' onChange={this.handleChange} />
+                <S.All>
+                    <h2>Todos</h2>
+                    <S.todosFilmes>
+                        {this.state.busca.map((item) => (
+                            <S.Filme>
+                                <S.Img src={item.poster} />
+                                <h2>{item.titulo}</h2>
+                                <p>{item.sinopse}</p>
+                            </S.Filme>
+                        ))}
+                    </S.todosFilmes>
+                </S.All>
+            </div>
         )
     }
 }

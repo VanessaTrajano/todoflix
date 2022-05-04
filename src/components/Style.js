@@ -18,6 +18,7 @@ export const Header = styled.header`
     display:flex;
     justify-content:space-between;
     align-items:center;
+    z-index: -1;
 `
 
 export const TitleBox = styled.div`
@@ -91,10 +92,15 @@ export const Seta = styled.img`
     width: 2vw;
 `
 
-export const Input = styled.input`
+export const InputBox = styled.div`
+    width:18vw;
+`
+
+export const UselessInput = styled.input`
     background-color: #2C2C2C;
     border: none;
     width:18vw;
+    height: 2.5vw;
     padding-left:2.7vw;
     background-image: url(${Lupa});
     background-repeat:no-repeat;
@@ -102,6 +108,25 @@ export const Input = styled.input`
     background-position: 0.5vw;
     border-radius:2px;
     color: #fff;
+`
+
+export const InputTodos = styled.input`
+    background-color: #2C2C2C;
+    border: none;
+    width:18vw;
+    height: 2.5vw;
+    padding-left:2.7vw;
+    background-image: url(${Lupa});
+    background-repeat:no-repeat;
+    background-size:2vw 2vw;
+    background-position: 0.5vw;
+    border-radius:2px;
+    color: #fff;
+    
+    position: absolute;
+    left: 69.3vw;
+    top: 1.7vw;
+    z-index: 1;
 `
 
 export const Main = styled.main`

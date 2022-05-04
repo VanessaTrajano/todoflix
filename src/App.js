@@ -2,6 +2,7 @@ import React from 'react'
 import Main from './components/Main'
 import Todos from './components/Todos'
 import * as S from './components/Style'
+import styled from "styled-components";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 
 import Perfil from './images/perfilRoxo.png'
@@ -14,6 +15,11 @@ import VoltarSozinho from './images/voltar-sozinho.png'
 import Rocketman from './images/rocketman.jpeg'
 import AmarElo from './images/amarElo.jpeg'
 import FugaGalinhas from './images/fugaDasGalinhas.jpeg'
+
+const Links = styled(Link)`
+    color: white;
+    text-decoration:none;
+`
 
 export default class Header extends React.Component {
 
@@ -70,22 +76,6 @@ export default class Header extends React.Component {
     })
   }
 
-  handleChange = (e) => {
-    if (e.target.value !== '') {
-      this.setState({
-        busca: this.state.catalogo.filter((item) => {
-          if (item.titulo.toLowerCase().includes(e.target.value.toLowerCase())) {
-            return true;
-          }
-        })
-      })
-    } else {
-      this.setState({
-        busca: [],
-      })
-    }
-  }
-
   render() {
     return (
       <Router>
@@ -96,12 +86,12 @@ export default class Header extends React.Component {
 
             <nav>
               <S.Navigation>
-                <S.Item><Link to='/'>Início</Link></S.Item>
+                <S.Item><Links to='/'>Início</Links></S.Item>
                 <S.Item onClick={this.handleList}>Categorias</S.Item>
                 <S.Seta src={Seta} onClick={this.handleList} />
                 {this.state.list && (
                   <S.Categorias>
-                    <li><Link to='todos'>Todos</Link></li>
+                    <li><Links to='todos'>Todos</Links></li>
                     <li>Favoritos</li>
                     <li>Já vistos</li>
                     <li>Adicionados</li>
@@ -110,13 +100,13 @@ export default class Header extends React.Component {
               </S.Navigation>
             </nav>
 
-
-
           </S.TitleBox>
 
           <S.SearchBox>
             <S.Button>Adicionar filme</S.Button>
-            <S.Input placeholder='Pesquisar' onChange={this.handleChange} />
+            <S.InputBox>
+              <S.UselessInput placeholder='Pesquisar'/>
+            </S.InputBox>
             <div>
               <img src={Perfil} />
               <S.Seta src={Seta} />
@@ -124,13 +114,6 @@ export default class Header extends React.Component {
           </S.SearchBox>
 
         </S.Header>
-        {this.state.busca.map((item) => (
-          <S.Movie>
-            <S.Img src={item.poster} />
-            <h2>{item.titulo}</h2>
-            <p>{item.sinopse}</p>
-          </S.Movie>
-        ))}
 
         <Routes>
           <Route path='/' element={<Main />} />
